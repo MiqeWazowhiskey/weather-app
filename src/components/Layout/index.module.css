@@ -1,12 +1,11 @@
 .container{
     background: url('./sky.jpg');
     background-repeat: no-repeat;
+    background-size: cover;
     background-attachment: fixed;
+    background-position: center;
     overflow: hidden;
     display: flex;
-    flex-direction: column;
-    width: 100%;
-    height: 100%;
     justify-content: center;
     align-items: center;
 

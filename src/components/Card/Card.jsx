@@ -11,7 +11,7 @@ export const Card = ({query}) => {
             {isSuccess && data.city.name}
         </h1>
 
-        <div className='w-1/2 flex flex-col items-center'>
+        <div className='w-1/2 flex flex-col items-center whitespace-nowrap'>
           <p className=''>
             {isSuccess && data.list[1].weather[0].main}
           </p>
@@ -33,7 +33,7 @@ export const Card = ({query}) => {
           {isSuccess && data.list.map((v,i)=>{
             return(
               <div key={i} className="flex flex-col items-center lg:gap-y-10 rounded-[50px] bg-[#8EC1D6] bg-opacity-40 p-5 shadow-xl">
-                <div className='lg:w-[96px] w-[256px] flex p-2'>
+                <div className='lg:w-[96px] w-[196px] whitespace-pre-line text-center flex p-2'>
                   {
                     new Date(v.dt * 1000).toLocaleDateString('en-US', {
                       month: 'long',
