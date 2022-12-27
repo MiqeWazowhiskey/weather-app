@@ -1,15 +1,16 @@
-
+import { useState } from 'react'
 import './App.css'
 import { Card } from './components/Card'
-import { useGetWeatherDataQuery } from './components/Card/api/weatherApiSlice'
 function App() {
-  const{data,error,isError,isLoading}= useGetWeatherDataQuery({query: "New+York+City"})
-  const name = data && data.city.name
-  const list = data && data.list
-  console.log(list)
-  return (
-    <div className="w-full h-screen flex justify-center items-center">
-      <Card name={name} weather={list}/>
+    const [input,setInput]= useState("")
+
+    return (
+    <div className="flex-col w-full h-screen flex justify-center items-center">
+      <div className='mb-10 border-2 rounded-[50px] border-[#8EC1D6]'>
+        <input onChange={(e)=>{const lower = e.target.value.toLowerCase() ; setInput(lower)}} type="search" size={23} className="outline-none bg-inherit p-5 text-center font-bold text-2xl"/>  
+      </div>
+      
+      <Card query={input}/>
     </div>
   )
 }

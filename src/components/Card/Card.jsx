@@ -1,14 +1,17 @@
 import React from 'react'
 import { useGetWeatherDataQuery } from './api/weatherApiSlice'
 
-export const Card = ({name, weather}) => {
-  const data = weather.filter((v,i)=>i<=4);
+export const Card = ({query}) => {
+  const{data,error,isError,isLoading}= useGetWeatherDataQuery({query: query})
+  const name = data && data.city.name
+  const list = data.list && data.list
+  const weatherData = list.filter((v,i)=>i<=4);
   return (
-    <div className='flex flex-col items-center justify-center w-1/3 h-2/6 rounded-[50px] border border-black'>
-      <span className='text-3xl font-bold'>
+    <div className='flex flex-col items-center justify-center w-1/3 h-2/6 rounded-[50px] shadow-2xl shadow-[#CBD5E1]'>
+      <span className='text-3xl font-bold p-5 text-[#3D4B5F]'>
         {name}
       </span>
-        {data.map((v,i)=>{
+        {weatherData.map((v,i)=>{
           return(
             <div key={i}>
               {
