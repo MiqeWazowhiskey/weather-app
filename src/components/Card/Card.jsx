@@ -6,12 +6,12 @@ export const Card = ({query}) => {
   return (
     <>
     
-      <div className='flex flex-col border items-center w-5/6 lg:w-1/2 h-1/2 rounded-[50px] mb-12 p-5 bg-white bg-opacity-50'>
+      <div className='flex flex-col whitespace-nowrap border items-center w-5/6 lg:w-1/2 h-1/2 rounded-[50px] mb-12 p-5 bg-white bg-opacity-50'>
         <h1 className='text-3xl font-bold p-5 text-[#3D4B5F] '>
             {isSuccess && data.city.name}
         </h1>
 
-        <div className='w-1/2 flex flex-col items-center whitespace-nowrap'>
+        <div className='w-1/2 flex flex-col items-center'>
           <p className=''>
             {isSuccess && data.list[1].weather[0].main}
           </p>
