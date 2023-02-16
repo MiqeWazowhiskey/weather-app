@@ -12,15 +12,15 @@ export const Card = ({query}) => {
 
           <div className='flex w-full text-2xl justify-center flex-col gap-x-10 items-center'>
             <p>
-              {isSuccess && data.list[0].weather[0].description.toUpperCase()}
+              {isSuccess && data.list[0].weather[0].description}
             </p>
             <p>
             {isSuccess && data.list[0].dt_txt.substring(10,16)}
             </p>
             <p>
-            {isSuccess && (data.list[0].main.temp-273.15).toString().substring(0,4).length==4 
+            { isSuccess && (data.list[0].main.temp-273.15).toString().substring(0,4).length==4 
               ? (data.list[0].main.temp-273.15).toString().substring(0,4) 
-              : (data.list[0].main.temp-273.15).toString().substring(0,4).concat(".00")} °C
+              : isSuccess && (data.list[0].main.temp-273.15).toString().substring(0,4).concat(".00")} °C
             </p>
 
           </div>
