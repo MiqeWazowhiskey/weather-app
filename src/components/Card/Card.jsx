@@ -47,14 +47,23 @@ export const Card = ({query}) => {
         
       </div>
       <div className='w-full flex lg:flex-wrap flex-col justify-center items-center lg:h-1/2 gap-2 p-2'>
-      {data.list.map((v,i)=>{
+      {data.list.filter(v=>v.dt_txt.substring(11,16)=="15:00").map((v,i)=>{
             return(
-              v.dt_txt.substring(11,16)=="15:00" &&
               <div key={i} className="lg:h-full lg:w-1/6 w-full h-[72px] flex lg:flex-col justify-around gap-x-1 lg:justify-center items-center bg-white lg:p-2 p-5 border-2 border-[#3C2F64] rounded-[50px] ">
-                <p className='lg:text-lg text-xs'>{new Date(v.dt*1000).toLocaleDateString("en-US",{
-                  month:"long",
-                  day:"2-digit",
-                })}</p>
+                {i==0
+                  ?<p className='lg:text-lg text-xs'>
+                    Today
+                  </p>
+                  :i==1
+                  ?<p className='lg:text-lg text-xs'>
+                    Tomorrow
+                  </p>
+                  :<p className='lg:text-lg text-xs'>
+                    {new Date(v.dt*1000).toLocaleDateString("en-US",{
+                      month:"long",
+                      day:"2-digit",
+                    })}
+                  </p>}
                 <div className='lg:text-6xl text-3xl text-center'>
                   {icons.find(val=>val.name===v.weather[0].main).icon}
                 </div>
