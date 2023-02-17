@@ -4,6 +4,6 @@
 
 Weather app provides user to know information about weather that their search.<br />
 ### DESKTOP<br />
-![ss1](https://user-images.githubusercontent.com/91954535/209736960-e67113f1-379d-4601-82c0-9953b4afff0c.jpg)<br />
+![Screenshot 2023-02-17 031213](https://user-images.githubusercontent.com/91954535/219517211-93ad58a4-4f9f-415b-9611-d7308e6a0cca.jpg)
 ### MOBILE<br />
-![ss2](https://user-images.githubusercontent.com/91954535/209736974-ac698b5d-80ec-4710-8288-fa94fe41d63d.jpg)
+![Screenshot 2023-02-17 031618](https://user-images.githubusercontent.com/91954535/219517227-419a5f45-4fe0-4950-bfbf-d6104778a9d8.jpg)
