@@ -17,17 +17,17 @@ export const Card = ({query}) => {
   
   return isSuccess ? (
     
-    <div className='w-4/6 h-5/6 rounded-[50px] bg-[#F3D5F6] m-5 border border-[#3C2F64] mt-28'>
-      <div className='w-full h-1/2 flex flex-row bg-[#3C2F64] rounded-t-[50px]'>
+    <div className='lg:w-4/6 h-5/6 w-full rounded-[50px] bg-[#F3D5F6] m-5 border overflow-auto border-[#3C2F64] mt-28'>
+      <div className='w-full lg:h-1/2 flex justify-center items-center lg:flex-row flex-col bg-[#3C2F64] rounded-t-[50px] p-2'>
 
-        <div className='flex w-1/68 h-full items-start p-2 justify-start text-8xl '>
+        <div className='flex lg:items-start items-center lg:p-2 justify-start text-8xl '>
           {isSuccess && icons.find(v=>v.name===data.list[0].weather[0].main).icon}
         </div> 
 
-        <p className='font-bold text-white w-5/6 h-full flex flex-col justify-end items-start p-8 border-r-4  text-8xl whitespace-nowrap'>
+        <p className='font-bold text-white w-5/6 h-full flex flex-col justify-end lg:items-start items-center lg:p-8 lg:border-r-4  text-8xl whitespace-nowrap'>
 
           {Math.floor((data.list[0].main.temp)-273.15).toString().concat(" °")}
-            <p className='text-white w-full text-2xl text-start p-5 font-medium tracking-wider'>
+            <p className='text-white w-full text-2xl lg:text-start text-center lg:p-5 font-medium tracking-wider'>
             {data.list[0].weather[0].main}
             </p>
             
@@ -35,7 +35,7 @@ export const Card = ({query}) => {
         
         
 
-        {<p className='text-3xl font-bold text-white w-1/2 h-full flex justify-end items-center p-16'>
+        {<p className='text-3xl font-bold text-white w-1/2 h-full flex justify-end items-center lg:p-16 '>
           <span className='w-1/6 h-[6px] rounded-[50px] bg-white flex mt-8'>
           {/**css line */}
           </span>
@@ -46,22 +46,22 @@ export const Card = ({query}) => {
         </p>}
         
       </div>
-      <div className='w-full flex lg:flex-wrap flex-col justify-center items-center h-1/2 gap-2 p-5'>
+      <div className='w-full flex lg:flex-wrap flex-col justify-center items-center lg:h-1/2 gap-2 p-2'>
       {data.list.map((v,i)=>{
             return(
               v.dt_txt.substring(11,16)=="15:00" &&
-              <div key={i} className="h-full flex flex-col justify-center items-center bg-white w-1/6 border-2 border-[#3C2F64] rounded-[50px] ">
+              <div key={i} className="lg:h-full lg:w-1/6 w-full h-[72px] flex lg:flex-col justify-around lg:justify-center items-center bg-white lg:p-2 p-5 border-2 border-[#3C2F64] rounded-[50px] ">
                 <p className='text-lg'>{new Date(v.dt*1000).toLocaleDateString("en-US",{
                   month:"long",
                   day:"2-digit",
                 })}</p>
-                <div className='text-6xl w-full text-center'>
+                <div className='lg:text-6xl text-3xl text-center'>
                   {icons.find(val=>val.name===v.weather[0].main).icon}
                 </div>
-                <p className='text-md'>
+                <p className='lg:text-md text-xs'>
                   {v.weather[0].description}
                 </p>
-                <p className='text-5xl'>
+                <p className='lg:text-5xl text-lg'>
                   {Math.floor(v.main.temp-273.15).toString().concat("°")}
                 </p>
               </div>
