@@ -50,8 +50,8 @@ export const Card = ({query}) => {
       {data.list.map((v,i)=>{
             return(
               v.dt_txt.substring(11,16)=="15:00" &&
-              <div key={i} className="lg:h-full lg:w-1/6 w-full h-[72px] flex lg:flex-col justify-around lg:justify-center items-center bg-white lg:p-2 p-5 border-2 border-[#3C2F64] rounded-[50px] ">
-                <p className='text-lg'>{new Date(v.dt*1000).toLocaleDateString("en-US",{
+              <div key={i} className="lg:h-full lg:w-1/6 w-full h-[72px] flex lg:flex-col justify-around gap-x-1 lg:justify-center items-center bg-white lg:p-2 p-5 border-2 border-[#3C2F64] rounded-[50px] ">
+                <p className='lg:text-lg text-xs'>{new Date(v.dt*1000).toLocaleDateString("en-US",{
                   month:"long",
                   day:"2-digit",
                 })}</p>
